@@ -11,5 +11,5 @@ CREATE TABLE campaigns (
     conversions INTEGER DEFAULT 0,
     spend DECIMAL(12, 2) DEFAULT 0,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-    deleted_at TIMESTAMP WITH TIME ZONE -- Mandatory for Task 2.1 Soft Delete
+    deleted_at TIMESTAMP WITH TIME ZONE
 );

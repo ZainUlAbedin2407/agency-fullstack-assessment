@@ -6,7 +6,7 @@ export const getCampaigns = async (req, res) => {
         const { data, error } = await supabase
             .from('campaigns')
             .select('*')
-            .is('deleted_at', null); // Requirement: Soft delete filter
+            .is('deleted_at', null);
 
         if (error) throw error;
         res.status(200).json(data);
@@ -20,9 +20,16 @@ export const createCampaign = async (req, res) => {
     try {
         const { name, client, budget, status } = req.body;
 
-        // Basic Validation (Requirement: reject invalid data)
-        if (!name || !budget || !client) {
-            return res.status(400).json({ error: "Name, Client, and Budget are required fields." });
+        const errors = [];
+        if (!name || typeof name !== 'string') errors.push("Campaign name is required and must be text.");
+        if (!client || typeof client !== 'string') errors.push("Client name is required.");
+        if (budget === undefined || isNaN(budget) || budget <= 0) errors.push("Budget must be a positive number.");
+        if (errors.length > 0) {
+            return res.status(400).json({
+                success: false,
+                message: "Validation Failed",
+                errors: errors
+            });
         }
 
         const { data, error } = await supabase
@@ -42,14 +49,23 @@ export const softDeleteCampaign = async (req, res) => {
     try {
         const { id } = req.params;
 
-        // Requirement: Add deleted_at timestamp instead of actual deletion
-        const { error } = await supabase
+        // Use { count: 'exact' } to see if Supabase even sees the row
+        const { data, error } = await supabase
             .from('campaigns')
             .update({ deleted_at: new Date().toISOString() })
-            .eq('id', id);
+            .eq('id', id)
+            .select();
 
         if (error) throw error;
-        res.status(200).json({ message: "Campaign soft-deleted successfully" });
+
+        if (!data || data.length === 0) {
+            return res.status(404).json({
+                error: "Campaign not found",
+                details: "The ID exists but the update returned no rows. Check if RLS is disabled in Supabase."
+            });
+        }
+
+        res.status(200).json({ message: "Soft delete successful", data: data[0] });
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
