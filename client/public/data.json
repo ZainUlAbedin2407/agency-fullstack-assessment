@@ -1,0 +1,59 @@
+{
+  "campaigns": [
+    {
+      "id": "c001",
+      "name": "Lumiere Summer Launch",
+      "client": "Lumiere Skincare",
+      "status": "Active",
+      "budget": 50000,
+      "spend": 32450,
+      "impressions": 2400000,
+      "clicks": 48000,
+      "conversions": 1200
+    },
+    {
+      "id": "c002",
+      "name": "TechPro Q3 B2B",
+      "client": "TechPro Solutions",
+      "status": "Active",
+      "budget": 120000,
+      "spend": 85000,
+      "impressions": 5100000,
+      "clicks": 105000,
+      "conversions": 2500
+    },
+    {
+      "id": "c003",
+      "name": "Evergreen Retargeting",
+      "client": "Lumiere Skincare",
+      "status": "Paused",
+      "budget": 15000,
+      "spend": 15000,
+      "impressions": 950000,
+      "clicks": 21000,
+      "conversions": 600
+    },
+    {
+      "id": "c004",
+      "name": "Nike Run App Install",
+      "client": "Nike",
+      "status": "Active",
+      "budget": 200000,
+      "spend": 140000,
+      "impressions": 8400000,
+      "clicks": 320000,
+      "conversions": 18500
+    },
+    {
+      "id": "c005",
+      "name": "Local Brand Awareness",
+      "client": "City Cafe Co",
+      "status": "Active",
+      "budget": 8000,
+      "spend": 4200,
+      "impressions": 420000,
+      "clicks": 8500,
+      "conversions": 110
+    }
+  ]
+}

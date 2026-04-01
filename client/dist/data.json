@@ -1,0 +1,97 @@
+[
+  {
+    "id": "CAMP-001",
+    "name": "Summer Blast 2026",
+    "status": "Active",
+    "spend": 12500,
+    "impressions": 850000,
+    "clicks": 42500,
+    "conversions": 1250,
+    "platform": "Meta",
+    "history": [
+      { "date": "2026-03-01", "impressions": 25000, "clicks": 1200 },
+      { "date": "2026-03-05", "impressions": 28000, "clicks": 1400 },
+      { "date": "2026-03-10", "impressions": 30000, "clicks": 1600 },
+      { "date": "2026-03-15", "impressions": 27000, "clicks": 1350 },
+      { "date": "2026-03-20", "impressions": 32000, "clicks": 1700 },
+      { "date": "2026-03-25", "impressions": 35000, "clicks": 1900 },
+      { "date": "2026-03-30", "impressions": 33000, "clicks": 1800 }
+    ]
+  },
+  {
+    "id": "CAMP-002",
+    "name": "Q1 B2B Lead Gen",
+    "status": "Paused",
+    "spend": 8200,
+    "impressions": 210000,
+    "clicks": 6300,
+    "conversions": 180,
+    "platform": "LinkedIn",
+    "history": [
+      { "date": "2026-03-01", "impressions": 6000, "clicks": 180 },
+      { "date": "2026-03-05", "impressions": 7200, "clicks": 210 },
+      { "date": "2026-03-10", "impressions": 8500, "clicks": 260 },
+      { "date": "2026-03-15", "impressions": 6500, "clicks": 190 },
+      { "date": "2026-03-20", "impressions": 5000, "clicks": 150 },
+      { "date": "2026-03-25", "impressions": 4200, "clicks": 120 },
+      { "date": "2026-03-30", "impressions": 3000, "clicks": 80 }
+    ]
+  },
+  {
+    "id": "CAMP-003",
+    "name": "Retargeting Campaign",
+    "status": "Active",
+    "spend": 4500,
+    "impressions": 320000,
+    "clicks": 28800,
+    "conversions": 450,
+    "platform": "Google",
+    "history": [
+      { "date": "2026-03-01", "impressions": 10000, "clicks": 800 },
+      { "date": "2026-03-05", "impressions": 10500, "clicks": 900 },
+      { "date": "2026-03-10", "impressions": 11000, "clicks": 950 },
+      { "date": "2026-03-15", "impressions": 11500, "clicks": 1050 },
+      { "date": "2026-03-20", "impressions": 10200, "clicks": 900 },
+      { "date": "2026-03-25", "impressions": 11800, "clicks": 1100 },
+      { "date": "2026-03-30", "impressions": 12000, "clicks": 1150 }
+    ]
+  },
+  {
+    "id": "CAMP-004",
+    "name": "Holiday Promo",
+    "status": "Paused",
+    "spend": 15000,
+    "impressions": 1200000,
+    "clicks": 54000,
+    "conversions": 2100,
+    "platform": "TikTok",
+    "history": [
+      { "date": "2026-03-01", "impressions": 40000, "clicks": 1800 },
+      { "date": "2026-03-05", "impressions": 42000, "clicks": 1900 },
+      { "date": "2026-03-10", "impressions": 45000, "clicks": 2000 },
+      { "date": "2026-03-15", "impressions": 41000, "clicks": 1850 },
+      { "date": "2026-03-20", "impressions": 38000, "clicks": 1700 },
+      { "date": "2026-03-25", "impressions": 35000, "clicks": 1500 },
+      { "date": "2026-03-30", "impressions": 30000, "clicks": 1300 }
+    ]
+  },
+  {
+    "id": "CAMP-005",
+    "name": "Brand Awareness '26",
+    "status": "Active",
+    "spend": 28000,
+    "impressions": 3500000,
+    "clicks": 140000,
+    "conversions": 800,
+    "platform": "Meta",
+    "history": [
+      { "date": "2026-03-01", "impressions": 100000, "clicks": 3800 },
+      { "date": "2026-03-05", "impressions": 105000, "clicks": 4000 },
+      { "date": "2026-03-10", "impressions": 110000, "clicks": 4200 },
+      { "date": "2026-03-15", "impressions": 115000, "clicks": 4500 },
+      { "date": "2026-03-20", "impressions": 120000, "clicks": 4800 },
+      { "date": "2026-03-25", "impressions": 125000, "clicks": 5100 },
+      { "date": "2026-03-30", "impressions": 130000, "clicks": 5300 }
+    ]
+  }
+]
