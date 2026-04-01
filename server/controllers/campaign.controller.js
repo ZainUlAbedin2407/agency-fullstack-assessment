@@ -3,13 +3,47 @@ import supabase from '../config/supabase.js';
 // GET /campaigns — list all (Filter out soft-deleted)
 export const getCampaigns = async (req, res) => {
     try {
-        const { data, error } = await supabase
+        const {
+            page = 1,
+            limit = 10,
+            sort_by = 'created_at',
+            order = 'desc',
+            status,
+            client
+        } = req.query;
+
+        let query = supabase
             .from('campaigns')
-            .select('*')
+            .select('*', { count: 'exact' })
             .is('deleted_at', null);
 
+        // Filters
+        if (status) query = query.eq('status', status);
+        if (client) query = query.ilike('client', `%${client}%`);
+
+        // Sorting
+        query = query.order(sort_by, { ascending: order === 'asc' });
+
+        // Pagination
+        const parsedLimit = parseInt(limit, 10);
+        const parsedPage = parseInt(page, 10);
+        const from = (parsedPage - 1) * parsedLimit;
+        const to = from + parsedLimit - 1;
+        query = query.range(from, to);
+
+        const { data, error, count } = await query;
+
         if (error) throw error;
-        res.status(200).json(data);
+
+        res.status(200).json({
+            data,
+            pagination: {
+                total: count,
+                page: parsedPage,
+                limit: parsedLimit,
+                totalPages: Math.ceil(count / parsedLimit)
+            }
+        });
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
@@ -66,6 +100,55 @@ export const softDeleteCampaign = async (req, res) => {
         }
 
         res.status(200).json({ message: "Soft delete successful", data: data[0] });
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+};
+
+// GET /campaigns/:id — single campaign with full metrics
+export const getCampaignById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { data, error } = await supabase
+            .from('campaigns')
+            .select('*')
+            .eq('id', id)
+            .is('deleted_at', null)
+            .single();
+
+        if (error && error.code === 'PGRST116') {
+             return res.status(404).json({ error: "Campaign not found" });
+        }
+        if (error) throw error;
+
+        res.status(200).json(data);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+};
+
+// PUT /campaigns/:id — update campaign
+export const updateCampaign = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const updates = req.body;
+        
+        // Prevent protected system fields from being manually overridden
+        delete updates.id;
+        delete updates.created_at;
+        delete updates.deleted_at;
+
+        const { data, error } = await supabase
+            .from('campaigns')
+            .update(updates)
+            .eq('id', id)
+            .is('deleted_at', null)
+            .select();
+
+        if (error) throw error;
+        if (!data || data.length === 0) return res.status(404).json({ error: "Campaign not found" });
+
+        res.status(200).json(data[0]);
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
