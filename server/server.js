@@ -6,7 +6,6 @@ import rateLimit from 'express-rate-limit';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
 
-// Route Imports (Ensure you add .js extension for ESM)
 import authRoutes from './routes/auth.route.js';
 import campaignRoutes from './routes/campaign.route.js';
 
@@ -16,7 +15,7 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
     cors: {
-        origin: "*", // Match CORS policy for standard dev environment
+        origin: "*",
         methods: ["GET", "POST", "PUT", "DELETE"]
     }
 });
@@ -45,7 +44,7 @@ app.get('/', (req, res) => {
 // SOCKET.IO REAL-TIME ENGINE
 io.on('connection', (socket) => {
     console.log(`[Socket] Client connected: ${socket.id}`);
-    
+
     socket.on('disconnect', () => {
         console.log(`[Socket] Client disconnected: ${socket.id}`);
     });

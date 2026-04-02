@@ -28,7 +28,7 @@ export function DateRangePicker({ value, onChange }) {
 
   const handleSelect = (val) => {
     if (val !== 'custom') {
-      onChange(val, null); // Preset select hone pe dates null bhejien
+      onChange(val, null);
       setIsCustomApplied(false);
       setIsOpen(false);
     } else {

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 export function useDarkMode() {
   const [isDark, setIsDark] = useState(() => {
-    // Check localStorage or system preference on initial load
     if (typeof window !== "undefined") {
       const stored = localStorage.getItem("theme");
       if (stored === "dark") return true;

@@ -12,7 +12,6 @@ export function DashboardPage() {
   const [dateRange, setDateRange] = useState('30d');
   const [customDates, setCustomDates] = useState(null); // Custom range ke liye state
 
-  // 1. Sabse pehle Data ko filter karein Date ke mutabiq
   const filteredData = useMemo(() => {
     if (!data) return [];
     const now = new Date();
