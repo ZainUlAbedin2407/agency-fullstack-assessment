@@ -6,6 +6,7 @@ export function Sidebar({ isOpen, setIsOpen, activePage, setActivePage }) {
   const navigation = [
     { id: 'dashboard', name: 'Dashboard', icon: LayoutDashboard },
     { id: 'campaigns', name: 'Campaign List', icon: Target },
+    { id: 'brief', name: 'Creative Brief', icon: Sparkles },
     { id: 'clients', name: 'Clients List', icon: Users },
     { id: 'settings', name: 'Settings', icon: Settings },
   ];

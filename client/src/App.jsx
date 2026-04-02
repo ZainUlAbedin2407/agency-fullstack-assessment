@@ -4,6 +4,7 @@ import { DashboardPage } from './components/dashboard/DashboardPage';
 import { CampaignsPage } from './components/campaigns/CampaignsPage';
 import { ClientsPage } from './components/clients/ClientsPage';
 import { SettingsPage } from './components/settings/SettingsPage';
+import { BriefBuilderPage } from './components/brief/BriefBuilderPage';
 
 function App() {
   const [activePage, setActivePage] = useState('dashboard');
@@ -14,6 +15,8 @@ function App() {
         return <DashboardPage />;
       case 'campaigns':
         return <CampaignsPage />;
+      case 'brief':
+        return <BriefBuilderPage />;
       case 'clients':
         return <ClientsPage />;
       case 'settings':
