@@ -9,7 +9,8 @@
       "spend": 32450,
       "impressions": 2400000,
       "clicks": 48000,
-      "conversions": 1200
+      "conversions": 1200,
+      "date": "2026-03-28"
     },
     {
       "id": "c002",
@@ -20,7 +21,8 @@
       "spend": 85000,
       "impressions": 5100000,
       "clicks": 105000,
-      "conversions": 2500
+      "conversions": 2500,
+      "date": "2026-03-15"
     },
     {
       "id": "c003",
@@ -31,7 +33,8 @@
       "spend": 15000,
       "impressions": 950000,
       "clicks": 21000,
-      "conversions": 600
+      "conversions": 600,
+      "date": "2026-02-10"
     },
     {
       "id": "c004",
@@ -42,7 +45,8 @@
       "spend": 140000,
       "impressions": 8400000,
       "clicks": 320000,
-      "conversions": 18500
+      "conversions": 18500,
+      "date": "2026-03-31"
     },
     {
       "id": "c005",
@@ -53,7 +57,8 @@
       "spend": 4200,
       "impressions": 420000,
       "clicks": 8500,
-      "conversions": 110
+      "conversions": 110,
+      "date": "2026-04-01"
     }
   ]
 }

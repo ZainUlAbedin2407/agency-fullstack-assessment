@@ -5,14 +5,14 @@ export function ClientsPage() {
   const clientsMock = [
     { id: 'CL-102', name: 'Acme Corp', status: 'Active', campaigns: 3, spend: '$45,000' },
     { id: 'CL-103', name: 'Global Tech', status: 'Onboarding', campaigns: 0, spend: '$0' },
-    { id: 'CL-104', name: 'Nova Enterprises', status: 'Active', campaigns: 8, spend: '$120,400' }
+    { id: 'CL-104', name: 'CampaignHQ', status: 'Active', campaigns: 8, spend: '$120,400' }
   ];
 
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out pb-10">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 glass-panel rounded-2xl p-6 sm:px-8 border-white/40 dark:border-white/5 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl -z-10 translate-x-1/3 -translate-y-1/2" />
-        
+
         <div>
           <h2 className="text-3xl font-extrabold tracking-tight text-foreground flex items-center gap-3">
             <Users className="h-8 w-8 text-primary" />

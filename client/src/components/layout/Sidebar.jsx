@@ -15,7 +15,7 @@ export function Sidebar({ isOpen, setIsOpen, activePage, setActivePage }) {
     <>
       {/* Mobile Backdrop */}
       {isOpen && (
-        <div 
+        <div
           className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm lg:hidden"
           onClick={() => setIsOpen(false)}
         />
@@ -34,7 +34,7 @@ export function Sidebar({ isOpen, setIsOpen, activePage, setActivePage }) {
               <Sparkles className="w-4 h-4 text-white" />
             </div>
             <span className="text-2xl font-extrabold tracking-tight text-foreground">
-              Nova
+              CampaignHQ
             </span>
           </div>
           <button
